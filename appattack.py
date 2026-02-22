@@ -24,7 +24,7 @@ gender_option = st.selectbox(
     "Gender",
     ("Female", "Male")
 )
-gender = 0 (if gender_option == "Female" else 1)
+gender = 0 if gender_option == "Female" else 1
 
 heart_rate = st.number_input("Heart rate")
 sys_bp = st.number_input("Systolic blood pressure")
