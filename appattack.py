@@ -28,22 +28,24 @@ blood_sugar = st.number_input("Blood sugar")
 ck_mb = st.number_input("CK-MB")
 troponin = st.number_input("Troponin")
 # Create dataframe
-input_data = pd.DataFrame({
-    "Age": [age],
-    "Gender": [gender],
-    "Heart rate": [heart_rate],
-    "Systolic blood pressure": [sys_bp],
-    "Diastolic blood pressure": [dia_bp],
-    "Blood sugar": [blood_sugar],
-    "CK-MB": [ck_mb],
-    "Troponin": [troponin]
-})
+input_data = pd.DataFrame([[
+    age,
+    gender,
+    heart_rate,
+    sys_bp,
+    dia_bp,
+    blood_sugar,
+    ck_mb
+]], columns=model.feature_names_in_)
 
-# Prediction button
+# -----------------------------
+# Prediction
+# -----------------------------
+
 if st.button("Predict"):
     prediction = model.predict(input_data)[0]
 
-    if prediction == 1:
+    if prediction == "positive":
         st.error("⚠️ High Risk of Heart Attack")
     else:
         st.success("✅ Low Risk of Heart Attack")
