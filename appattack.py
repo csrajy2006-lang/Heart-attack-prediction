@@ -35,7 +35,8 @@ input_data = pd.DataFrame([[
     sys_bp,
     dia_bp,
     blood_sugar,
-    ck_mb
+    ck_mb,
+    troponin
 ]], columns=model.feature_names_in_)
 
 # -----------------------------
