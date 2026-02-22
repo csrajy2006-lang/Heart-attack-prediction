@@ -20,7 +20,12 @@ st.write("Enter Patient Details:")
 
 # Input fields
 age = st.number_input("Age", min_value=0)
-gender = st.number_input("Gender (0 = Female, 1 = Male)")
+gender_option = st.selectbox(
+    "Gender",
+    ("Female", "Male")
+)
+gender = 0 (if gender_option == "Female" else 1)
+
 heart_rate = st.number_input("Heart rate")
 sys_bp = st.number_input("Systolic blood pressure")
 dia_bp = st.number_input("Diastolic blood pressure")
